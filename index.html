@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#17221f">
+  <title>HEXHAVEN — Prototype 0.1</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">✦</div>
+        <div><div class="brand-name">HEXHAVEN</div><div class="brand-sub">A LITTLE WORLD, ONE TILE AT A TIME</div></div>
+      </div>
+      <div class="score-panel"><span class="eyebrow">WORLD SCORE</span><strong id="score">0</strong></div>
+    </header>
+    <main class="layout">
+      <section class="board-wrap">
+        <div class="board-heading">
+          <div><span class="eyebrow">ENDLESS WORLD</span><h1>Shape your landscape</h1></div>
+          <div class="board-hint">Choose an empty glowing space to place your tile</div>
+        </div>
+        <div id="game-container"></div>
+        <div class="mobile-help">Tap a glowing hex to place · Rotate with the buttons below</div>
+      </section>
+      <aside class="side-panel">
+        <section class="panel-card current-card">
+          <div class="panel-title-row"><span class="eyebrow">NEXT LANDSCAPE</span><span class="turn-pill" id="turn">TILE 01</span></div>
+          <div id="preview" class="preview"></div>
+          <div class="rotate-row">
+            <button id="rotate-left" class="secondary-btn" aria-label="Rotate left">↶ Rotate</button>
+            <button id="rotate-right" class="secondary-btn" aria-label="Rotate right">Rotate ↷</button>
+          </div>
+          <div class="tile-caption" id="tile-caption">A little piece of the world.</div>
+        </section>
+        <section class="panel-card">
+          <div class="panel-title-row"><span class="eyebrow">WORLD OBJECTIVES</span><span class="tiny-label">REWARD</span></div>
+          <div class="objective" data-objective="forest">
+            <div class="objective-icon forest-icon">♣</div>
+            <div class="objective-copy"><strong>Forest network</strong><span>Connect 5 forest edges</span><div class="progress-track"><i id="forest-progress"></i></div></div>
+            <b id="forest-count">0/5</b>
+          </div>
+          <div class="objective" data-objective="river">
+            <div class="objective-icon river-icon">≈</div>
+            <div class="objective-copy"><strong>River journey</strong><span>Connect 4 river edges</span><div class="progress-track"><i id="river-progress"></i></div></div>
+            <b id="river-count">0/4</b>
+          </div>
+          <div class="objective" data-objective="village">
+            <div class="objective-icon village-icon">⌂</div>
+            <div class="objective-copy"><strong>Village links</strong><span>Connect 3 village edges</span><div class="progress-track"><i id="village-progress"></i></div></div>
+            <b id="village-count">0/3</b>
+          </div>
+        </section>
+        <section class="panel-card discoveries">
+          <div class="panel-title-row"><span class="eyebrow">DISCOVERIES</span><span class="tiny-label">LANDMARKS</span></div>
+          <div id="landmark-status" class="landmark-status"><span class="sparkle">✧</span><span>Your first landmark is waiting to be discovered.</span></div>
+          <div id="landmark-list" class="landmark-list"></div>
+        </section>
+        <div class="action-row">
+          <button id="undo" class="secondary-btn" disabled>↶ Undo</button>
+          <button id="restart" class="reset-btn">Restart world</button>
+        </div>
+        <div class="footer-note">PROTOTYPE 0.1 · YOUR WORLD IS SAVED IN THIS BROWSER SESSION</div>
+      </aside>
+    </main>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
