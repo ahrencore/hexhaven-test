@@ -162,6 +162,12 @@ class HexHaven extends Phaser.Scene {
     this.tiles.clear();this.history=[];this.turn=0;this.score=0;this.objectives={forest:0,river:0,village:0};this.landmarks=[];this.rotation=0;this.next=this.makeTile();this.createWorld();this.drawPreview();this.updateUI();
   }
 }
-const config={type:Phaser.AUTO,parent:'game-container',backgroundColor:'#263b31',scale:{mode:Phaser.Scale.RESIZE,width:'100%',height:'100%'},scene:[HexHaven],render:{antialias:true,roundPixels:false},fps:{target:60}};
-new Phaser.Game(config);
+const config={type:Phaser.AUTO,parent:'game-container',backgroundColor:'#263b31',scale:{mode:Phaser.Scale.RESIZE,width:900,height:650},scene:[HexHaven],render:{antialias:true,roundPixels:false},fps:{target:60}};
+const game = new Phaser.Game(config);
+window.addEventListener('error', (event) => {
+  const host = document.getElementById('game-container');
+  if (host && !host.querySelector('canvas')) {
+    host.innerHTML = '<div class="game-error">The game could not start. Please refresh the page. If it keeps happening, send us the browser error.</div>';
+  }
+});
 })();

@@ -23,3 +23,6 @@ body{padding:22px}.topbar{max-width:1400px;margin:0 auto 22px;display:flex;align
 .mobile-help{display:none;color:#aebca9;font-size:10px;text-align:center;padding-top:9px}
 @media(max-width:950px){body{padding:12px}.layout{grid-template-columns:1fr}.side-panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.current-card{grid-row:span 2}.footer-note{grid-column:1/-1}.board-wrap{padding:14px}#game-container{height:62vh;min-height:420px}}
 @media(max-width:600px){.topbar{margin-bottom:12px}.brand-name{font-size:18px}.brand-sub{font-size:7px}.score-panel{padding:6px 11px;gap:8px}.score-panel strong{font-size:21px}.board-heading{display:block}.board-heading h1{font-size:21px}.board-hint{font-size:10px;margin-top:5px}#game-container{height:53vh;min-height:350px}.side-panel{grid-template-columns:1fr}.current-card{grid-row:auto}.mobile-help{display:block}.panel-card{padding:14px}}
+
+#game-loading{position:absolute;left:-9999px}
+.game-error{height:100%;min-height:300px;display:grid;place-items:center;padding:30px;text-align:center;color:#f2dba6;font-size:14px;line-height:1.6}

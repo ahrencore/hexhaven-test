@@ -23,7 +23,7 @@
           <div><span class="eyebrow">ENDLESS WORLD</span><h1>Shape your landscape</h1></div>
           <div class="board-hint">Choose an empty glowing space to place your tile</div>
         </div>
-        <div id="game-container"></div>
+        <div id="game-container"><div id="game-loading">Growing your little world…</div></div>
         <div class="mobile-help">Tap a glowing hex to place · Rotate with the buttons below</div>
       </section>
       <aside class="side-panel">
@@ -67,6 +67,14 @@
       </aside>
     </main>
   </div>
+  <script>
+    window.addEventListener('load', () => {
+      if (typeof Phaser === 'undefined') {
+        const host = document.getElementById('game-container');
+        host.innerHTML = '<div class="game-error">The Phaser game engine could not load. Check your internet connection, then refresh the page.</div>';
+      }
+    });
+  </script>
   <script src="game.js"></script>
 </body>
 </html>
